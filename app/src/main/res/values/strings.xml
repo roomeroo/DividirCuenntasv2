@@ -1,3 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">dividirCuenta</string>
+    <string name="tip">Propaina redondation</string>
+    <string name="diners">Diners</string>
+    <string name="quantity">Quantity</string>
+    <string name="response1">Amount to pay:</string>
+    <string name="message2">Per person:</string>
+    <string name="calculate">Calculate</string>
 </resources>

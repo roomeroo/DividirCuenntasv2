@@ -25,6 +25,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
@@ -59,7 +60,7 @@ class MainActivity : ComponentActivity() {
                         }
 
                         crearInput(
-                            name = "Cantidad",
+                            name = stringResource(R.string.quantity),
                             valor = cantidad,
                             funcion = {
                                 introducido -> cantidad = introducido
@@ -68,7 +69,7 @@ class MainActivity : ComponentActivity() {
                         );
 
                         crearInput(
-                            name = "Comensales",
+                            name = stringResource(R.string.diners),
                             valor = comensales,
                             funcion = {
                                 introducido -> comensales = introducido
@@ -87,7 +88,7 @@ class MainActivity : ComponentActivity() {
                             ) {
 
                                 Text(
-                                    "Redondear propina",
+                                    text = stringResource(R.string.tip),
                                     fontSize = 24.sp
                                 )
 
@@ -145,7 +146,7 @@ fun crearInput(name:String, valor: String, funcion: (String)->Unit){
 @Composable
 fun crearBoton(
     listener :()->Unit = {},
-    texto :String = "Calcular",
+    texto :String = stringResource(R.string.calculate),
     enabled : Boolean = false,
     modifier: Modifier = Modifier,
 
@@ -192,11 +193,11 @@ fun crearSlider(
 fun mostrarResultado(total: Float, comensales : Int){
     var repartido = total.div(comensales)
     Text(
-        text = "Total a pagar: $total",
+        text =  stringResource(R.string.response1) + "$total",
         fontSize = 35.sp
     )
     Text(
-        text="Por persona: $repartido",
+        text= stringResource(R.string.message2) + " $repartido",
         fontSize = 35.sp
     )
 }
